@@ -14,7 +14,7 @@
         <!--Item 2-->
         <scene sceneID="mQM-ZW-H4c">
             <objects>
-                <viewController id="uW3-jz-w5F" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SecondViewController" id="uW3-jz-w5F" customClass="SecondViewController" customModule="TextKit_Example" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="4du-0b-XNc"/>
                         <viewControllerLayoutGuide type="bottom" id="tJT-OX-jge"/>
@@ -26,7 +26,17 @@
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="YXP-ZU-4QX">
                                 <rect key="frame" x="16" y="64" width="343" height="544"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <string key="text">This is a headline!
+…and a sub-headline…
+
+The body of the text is here.
+Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+
+One caption here…
+
+… and another caption there
+
+A footnote to make this sample perfect</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
@@ -40,26 +50,44 @@
                                             <constraint firstAttribute="width" secondItem="o1f-hf-HsZ" secondAttribute="height" multiplier="1:1" id="SJs-SY-8AI"/>
                                         </constraints>
                                         <state key="normal" image="bold"/>
+                                        <connections>
+                                            <action selector="makeBold:" destination="uW3-jz-w5F" eventType="touchUpInside" id="eDa-Q4-pIk"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nv8-h2-T63">
                                         <rect key="frame" x="56" y="6" width="32" height="32"/>
                                         <state key="normal" image="italic"/>
+                                        <connections>
+                                            <action selector="makeItalic:" destination="uW3-jz-w5F" eventType="touchUpInside" id="xKd-kO-K2W"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jvl-Cw-iNR">
                                         <rect key="frame" x="96" y="6" width="32" height="32"/>
-                                        <state key="normal" image="eraser"/>
+                                        <state key="normal" image="underline"/>
+                                        <connections>
+                                            <action selector="underlineText:" destination="uW3-jz-w5F" eventType="touchUpInside" id="ByH-UY-g2y"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Mk-iD-UPU">
                                         <rect key="frame" x="175" y="6" width="32" height="32"/>
                                         <state key="normal" image="left-align"/>
+                                        <connections>
+                                            <action selector="alignTextLeft:" destination="uW3-jz-w5F" eventType="touchUpInside" id="kTs-VU-xDU"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="baV-Ta-v5U">
                                         <rect key="frame" x="215" y="6" width="32" height="32"/>
                                         <state key="normal" image="center-align"/>
+                                        <connections>
+                                            <action selector="alignTextCenter:" destination="uW3-jz-w5F" eventType="touchUpInside" id="yAC-aT-Rdn"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N9R-oE-l6J">
                                         <rect key="frame" x="255" y="6" width="32" height="32"/>
                                         <state key="normal" image="right-align"/>
+                                        <connections>
+                                            <action selector="alignTextRight:" destination="uW3-jz-w5F" eventType="touchUpInside" id="zbK-7P-eDI"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pmw-M0-eJq">
                                         <rect key="frame" x="295" y="6" width="32" height="32"/>
@@ -69,6 +97,9 @@
                                                 <integer key="value" value="7"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="makeTextColorRed:" destination="uW3-jz-w5F" eventType="touchUpInside" id="BgR-y8-5ry"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Fr-7Z-XAn">
                                         <rect key="frame" x="335" y="6" width="32" height="32"/>
@@ -78,6 +109,9 @@
                                                 <integer key="value" value="7"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="makeTextColorBlack:" destination="uW3-jz-w5F" eventType="touchUpInside" id="Vq3-DC-nOx"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -129,6 +163,9 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item 2" id="dcR-VY-T0f"/>
+                    <connections>
+                        <outlet property="textView" destination="YXP-ZU-4QX" id="HV7-yf-wlX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="y5a-Mg-yeB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -149,7 +186,17 @@
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="AFz-au-QLA">
                                 <rect key="frame" x="16" y="64" width="343" height="544"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <string key="text">This is a headline!
+…and a sub-headline…
+
+The body of the text is here.
+Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+
+One caption here…
+
+… and another caption there
+
+A footnote to make this sample perfect</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
@@ -157,7 +204,7 @@
                                 <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pLm-gs-ako">
-                                        <rect key="frame" x="51.5" y="6" width="32" height="32"/>
+                                        <rect key="frame" x="52" y="6" width="32" height="32"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="pLm-gs-ako" secondAttribute="height" multiplier="1:1" id="OcM-Ov-CGJ"/>
                                             <constraint firstAttribute="height" constant="32" id="Ps7-Ez-4mY"/>
@@ -165,42 +212,63 @@
                                         <state key="normal" title="H">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="headlineStyleButtonSelected:" destination="wFt-8P-Tkk" eventType="touchUpInside" id="Fci-r5-7m5"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="92E-Oh-eLK">
-                                        <rect key="frame" x="91.5" y="6" width="32" height="32"/>
+                                        <rect key="frame" x="92" y="6" width="32" height="32"/>
                                         <state key="normal" title="SH">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="subHeadlineStyleButtonSelected:" destination="wFt-8P-Tkk" eventType="touchUpInside" id="2ZI-HW-Op9"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Psk-5f-M4G">
-                                        <rect key="frame" x="131.5" y="6" width="32" height="32"/>
+                                        <rect key="frame" x="132" y="6" width="32" height="32"/>
                                         <state key="normal" title="B">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="bodyStyleButtonSelected:" destination="wFt-8P-Tkk" eventType="touchUpInside" id="ddA-KF-xUF"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i8X-4u-5Jf">
-                                        <rect key="frame" x="171.5" y="6" width="32" height="32"/>
+                                        <rect key="frame" x="172" y="6" width="32" height="32"/>
                                         <state key="normal" title="F">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="footnoteStyleButtonSelected:" destination="wFt-8P-Tkk" eventType="touchUpInside" id="792-kR-NC8"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ing-Ao-Ln2">
-                                        <rect key="frame" x="211.5" y="6" width="32" height="32"/>
+                                        <rect key="frame" x="212" y="6" width="32" height="32"/>
                                         <state key="normal" title="C1">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="captionOneStyleButtonSelected:" destination="wFt-8P-Tkk" eventType="touchUpInside" id="9ZA-vz-Str"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ox5-5t-KtT">
-                                        <rect key="frame" x="251.5" y="6" width="32" height="32"/>
+                                        <rect key="frame" x="252" y="6" width="32" height="32"/>
                                         <state key="normal" title="C2">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="captionTwoStyleButtonSelected:" destination="wFt-8P-Tkk" eventType="touchUpInside" id="MFt-Lb-yTo"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oIl-ns-ARP">
-                                        <rect key="frame" x="291.5" y="6" width="32" height="32"/>
+                                        <rect key="frame" x="292" y="6" width="32" height="32"/>
                                         <state key="normal" title="EP">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="toggleImageButtonSelected:" destination="wFt-8P-Tkk" eventType="touchUpInside" id="Lbw-1O-3r4"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -236,12 +304,21 @@
                                     <constraint firstItem="ox5-5t-KtT" firstAttribute="height" secondItem="pLm-gs-ako" secondAttribute="height" id="zRr-Nz-eis"/>
                                 </constraints>
                             </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="poo" translatesAutoresizingMaskIntoConstraints="NO" id="j3v-WO-TB5">
+                                <rect key="frame" x="16" y="64" width="128" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="REi-fB-T4v"/>
+                                    <constraint firstAttribute="width" secondItem="j3v-WO-TB5" secondAttribute="height" multiplier="1:1" id="oxa-BW-BvG"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="j3v-WO-TB5" firstAttribute="leading" secondItem="AFz-au-QLA" secondAttribute="leading" id="7ux-0R-rAv"/>
                             <constraint firstItem="AFz-au-QLA" firstAttribute="leading" secondItem="hjy-xp-3WE" secondAttribute="leadingMargin" id="ch2-Gg-PfF"/>
                             <constraint firstAttribute="trailing" secondItem="QPf-Ju-soe" secondAttribute="trailing" id="gHX-KR-8ng"/>
                             <constraint firstAttribute="trailingMargin" secondItem="AFz-au-QLA" secondAttribute="trailing" id="icv-c6-9Nv"/>
+                            <constraint firstItem="j3v-WO-TB5" firstAttribute="top" secondItem="AFz-au-QLA" secondAttribute="top" id="iyf-0G-QxX"/>
                             <constraint firstItem="QPf-Ju-soe" firstAttribute="leading" secondItem="hjy-xp-3WE" secondAttribute="leading" id="mUg-IH-4Ge"/>
                             <constraint firstItem="AFz-au-QLA" firstAttribute="top" secondItem="QPf-Ju-soe" secondAttribute="bottom" id="n1N-JQ-6wt"/>
                             <constraint firstItem="3kp-p5-KA4" firstAttribute="top" secondItem="AFz-au-QLA" secondAttribute="bottom" constant="10" id="npO-DO-0Ye"/>
@@ -249,6 +326,10 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item 1" id="MeQ-i8-Zzk"/>
+                    <connections>
+                        <outlet property="imageView" destination="j3v-WO-TB5" id="K20-xh-qZl"/>
+                        <outlet property="textView" destination="AFz-au-QLA" id="wRl-Jl-pXQ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="br9-ht-Jsy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -276,9 +357,10 @@
     <resources>
         <image name="bold" width="64" height="64"/>
         <image name="center-align" width="64" height="64"/>
-        <image name="eraser" width="16" height="16"/>
         <image name="italic" width="64" height="64"/>
         <image name="left-align" width="64" height="64"/>
+        <image name="poo" width="511" height="511"/>
         <image name="right-align" width="64" height="64"/>
+        <image name="underline" width="64" height="64"/>
     </resources>
 </document>
