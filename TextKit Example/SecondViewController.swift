@@ -50,7 +50,19 @@ extension SecondViewController {
     }
     
     @IBAction func underlineText(_ sender: UIButton) {
+        let range = textView.selectedRange
         
+        var currentAttrbuties = textView.textStorage.attributes(at: range.location, effectiveRange: nil)
+        
+        if currentAttrbuties[NSUnderlineStyleAttributeName] == nil || currentAttrbuties[NSUnderlineStyleAttributeName] as! Int == 0 {
+            currentAttrbuties = [NSUnderlineStyleAttributeName: 1]
+        } else {
+            currentAttrbuties = [NSUnderlineStyleAttributeName: 0]
+        }
+        
+        textView.textStorage.beginEditing()
+        textView.textStorage.setAttributes(currentAttrbuties, range: range)
+        textView.textStorage.endEditing()
     }
     
     @IBAction func alignTextLeft(_ sender: UIButton) {
